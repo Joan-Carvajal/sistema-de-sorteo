@@ -14,15 +14,16 @@ class GanadorController extends Controller
         $userCount = User::count();
 
         if ($userCount < 5) {
-            return redirect()->back()->with('error', 'No hay suficientes usuarios registrados para realizar el sorteo.');
+            return redirect()->back()->withErrors(['error' => 'Aun no se selecciona un ganador']);
         }
+        $ganador = User::inRandomOrder()->first();
 
-        $ganador= User::inRandomOrder()->first();
+        $this->reiniciarSistema($ganador->id);
+        return redirect()->route('register');
+    }
+    private function reiniciarSistema($ganadorId): void
+    {
 
-        Ganador::create([
-            'user_id'=> $ganador->id,
-            'fechaSorteo'=> now()
-        ]);
-        return redirect()->route('register')->with('success', '¡Se ha seleccionado un ganador!');
+        User::where('id', '!=', $ganadorId)->delete();
     }
 }

@@ -11,7 +11,7 @@ class Ganador extends Model
     
     protected $fillable = [
         'user_id',
-        'fecha_sorteo',
+        'fechaSorteo',
     ];
     public function user()
     {
