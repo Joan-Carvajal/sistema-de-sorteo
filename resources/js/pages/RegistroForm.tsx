@@ -57,7 +57,7 @@ function RegistroForm({ departementos, ciudades }: RegistroProps) {
       preserveScroll: true,
       onSuccess: () => {
         setShowDialog(true);
-        // reset('nombre', 'apellido', 'cedula', 'departamento_id', 'ciudad_id', 'celular', 'email', 'habeas');
+        reset('nombre', 'apellido', 'cedula', 'departamento_id', 'ciudad_id', 'celular', 'email', 'habeas');
       },
     });
   };
@@ -211,7 +211,7 @@ function RegistroForm({ departementos, ciudades }: RegistroProps) {
               <DialogTitle>¡Registro exitoso!</DialogTitle>
               <DialogDescription>
                 Tu registro ha sido exitoso.
-                
+
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
