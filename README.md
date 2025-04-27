@@ -1,3 +1,7 @@
+
+Puedes acceder al proyecto desplegado en un servidor en : 
+https://sistema-de-sorteo-main-s09e38.laravel.cloud/
+
 Requisitos previos
 
 PHP >= 8.4
